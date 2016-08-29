@@ -1,0 +1,6 @@
+DEPENDENCIES
+  demoapp
+    path: demoapp
+
+GRAPH
+  demoapp (0.1.0)
