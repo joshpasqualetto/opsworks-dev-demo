@@ -5,7 +5,6 @@ pipeline {
       steps {
         git(url: 'https://github.com/sniperd/opsworks-dev-demo.git', branch: 'master', credentialsId: 'jenkins')
           sh 'echo \'hi\''
-          archiveArtifacts 'bleh'
       }
     }
     stage('Execute tests') {
