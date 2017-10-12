@@ -42,11 +42,9 @@ pipeline {
   post {
     success {
       echo 'yes'
-      currentBuild.result = "SUCCESS"
     }
     failure {
       echo 'no'
-      currentBuild.result = "FAILURE"
     }
   }
 }
