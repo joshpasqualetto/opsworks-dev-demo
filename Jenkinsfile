@@ -34,7 +34,7 @@ pipeline {
     }
     stage('Deploy QA') {
       steps {
-        sh 'Deploy QA'
+        sh 'echo \'Deploy QA\''
       }
     }
     stage('Manual Acceptance') {
