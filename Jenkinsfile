@@ -9,16 +9,9 @@ pipeline {
       }
     }
     stage('Execute tests') {
-      parallel {
-        stage('Integration Tests') {
-          steps {
-            sh 'echo \'test\''
-          }
-        }
-        stage('Unit Testing') {
-          steps {
-            sh 'echo \'unit tests\''
-          }
+      stage('Unit Testing') {
+        steps {
+          sh 'echo \'unit tests\''
         }
       }
     }
