@@ -46,14 +46,14 @@ pipeline {
       steps {
         sh 'echo \'deploy prod\''
       }
-      post {
-        success {
-          currentBuild.result = "SUCCESS"
-        }
-        failure {
-          currentBuild.result = "FAILURE"
-        }
-      }
+    }
     }
   }
+  post {
+    success {
+      currentBuild.result = "SUCCESS"
+    }
+    failure {
+      currentBuild.result = "FAILURE"
+    }
 }
