@@ -45,6 +45,7 @@ pipeline {
     stage('Deploy Prod') {
       steps {
         sh 'echo \'deploy prod\''
+        currentBuild.result = "SUCCESS"
       }
     }
   }
