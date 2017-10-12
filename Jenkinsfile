@@ -4,8 +4,8 @@ pipeline {
     stage(' Build Registrar') {
       steps {
         git(url: 'https://github.com/sniperd/opsworks-dev-demo.git', branch: 'master', credentialsId: 'jenkins')
-        sh 'echo \'hi\''
-        archiveArtifacts 'bleh'
+          sh 'echo \'hi\''
+          archiveArtifacts 'bleh'
       }
     }
     stage('Execute tests') {
@@ -47,7 +47,6 @@ pipeline {
         sh 'echo \'deploy prod\''
       }
     }
-    }
   }
   post {
     success {
@@ -56,4 +55,5 @@ pipeline {
     failure {
       currentBuild.result = "FAILURE"
     }
+  }
 }
