@@ -9,10 +9,8 @@ pipeline {
       }
     }
     stage('Execute tests') {
-      stage('Unit Testing') {
-        steps {
-          sh 'echo \'unit tests\''
-        }
+      steps {
+        sh 'echo \'unit tests\''
       }
     }
     stage('Deploy Development') {
@@ -43,10 +41,14 @@ pipeline {
   }
   post {
     success {
-      currentBuild.result = "SUCCESS"
+      steps {
+        currentBuild.result = "SUCCESS"
+      }
     }
     failure {
-      currentBuild.result = "FAILURE"
+      steps {
+        currentBuild.result = "FAILURE"
+      }
     }
   }
 }
