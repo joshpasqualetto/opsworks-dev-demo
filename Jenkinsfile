@@ -1,4 +1,5 @@
 pipeline {
+  currentBuild.result = "SUCCESS"
   agent any
   stages {
     stage(' Build Registrar') {
@@ -51,6 +52,7 @@ pipeline {
           echo 'Success'
         }
         failure {
+          currentBuild.result = "FAILURE"
           echo 'Failure'
         }
       }
