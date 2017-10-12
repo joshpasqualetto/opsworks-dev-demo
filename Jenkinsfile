@@ -43,14 +43,9 @@ pipeline {
       }
     }
     stage('Deploy Prod') {
-      try {
-        currentBuild.result = "SUCCESS"
-        steps {
-          sh 'echo \'deploy prod\''
-        }
-      } catch (err) {
-        currentBuild.result = "FAILURE"
-        throw err
+      steps {
+        sh 'echo \'deploy prod\''
+          currentBuild.result = "SUCCESS"
       }
     }
   }
