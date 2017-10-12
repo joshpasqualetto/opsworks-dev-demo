@@ -41,14 +41,12 @@ pipeline {
   }
   post {
     success {
-      steps {
-        currentBuild.result = "SUCCESS"
-      }
+      echo 'yes'
+      currentBuild.result = "SUCCESS"
     }
     failure {
-      steps {
-        currentBuild.result = "FAILURE"
-      }
+      echo 'no'
+      currentBuild.result = "FAILURE"
     }
   }
 }
